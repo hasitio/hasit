@@ -23,6 +23,12 @@ Route::group(['domain' => '{subdomain}.localhost'], function () {
 
     Route::get('/api/status', 'API\StatusController@getStatus');
 
+    Route::put('/api/status/update/yes', 'API\StatusController@putStatusYes');
+    Route::put('/api/status/update/no', 'API\StatusController@putStatusNo');
+
+
+
+
 
 });
 
