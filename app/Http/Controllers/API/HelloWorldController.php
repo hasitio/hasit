@@ -9,10 +9,10 @@ use App\Models\Hello;
 
 class HelloWorldController extends Controller
 {
-    public function getHelloWorld(){
+    public function getHelloWorld($account){
         $hello = new Hello;
         $hello->id = 1;
 
-        return $hello;
+        return $account;
     }
 }

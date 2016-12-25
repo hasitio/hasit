@@ -11,12 +11,14 @@
 |
 */
 
-$api = app('Dingo\Api\Routing\Router');
-
-Route::get('/', function () {
-    return view('welcome');
+//
+Route::get('/jake', function () {
+    return "Hello, World!";
 });
 
-$api->version('v1', function ($api){
-    $api->get('hello', 'App\Http\Controllers\API\HelloWorldController@getHelloWorld');
+
+Route::group(['domain' => '{account}.localhost'], function () {
+
+    Route::get('/api/gg', 'API\HelloWorldController@getHelloWorld');
+
 });
