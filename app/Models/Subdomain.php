@@ -14,4 +14,7 @@ class Subdomain extends Model
     ];
 
 
+    public function status(){
+        return $this->hasOne('App\Models\Status');
+    }
 }
