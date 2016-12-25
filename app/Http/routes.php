@@ -17,8 +17,13 @@ Route::get('/jake', function () {
 });
 
 
-Route::group(['domain' => '{account}.localhost'], function () {
+Route::group(['domain' => '{subdomain}.localhost'], function () {
 
     Route::get('/api/gg', 'API\HelloWorldController@getHelloWorld');
 
+    Route::get('/api/status', 'API\StatusController@getStatus');
+
+
 });
+
+Route::post('/api/subdomain', 'API\SubdomainController@postSubdomain');
