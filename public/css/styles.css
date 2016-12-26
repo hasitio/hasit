@@ -41,6 +41,9 @@ a:link, a:visited, a:hover, a:active {
 
 .answer {
   margin-top: 20%;
+}
+
+.answer span {
   font-weight: 700;
   font-size: 150px;
 }
