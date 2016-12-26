@@ -14,7 +14,15 @@
     @yield('head')
   </head>
   <body>
+    <div class="row">
+      <div class="col-xs-6"><h1><a href="{{ '/' }}">hasit</a></h1></div>
+      <div class="col-xs-6">
+        <a href="#"><h1>login</h1></a>
+      </div>
+    </div>
+    <div class="container">
     @yield('content')
+    </div>
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     @yield('footer')

@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+//temporary route to view subdomain page
+Route::get('/sub', function () {
+    return view('subdomain');
+});
+
 
 Route::group(['domain' => '{subdomain}.hasitdev.online'], function () {
 
