@@ -16,7 +16,8 @@ class SubdomainController extends Controller
 
         $name = $request->input('name');
 
-        if(is_null($name) || strlen($name) < 1 || ctype_alnum($name)){
+
+        if(is_null($name) || strlen($name) < 1){
             abort(400, "Did not provide a valid name for the subdomain.");
         }
 
