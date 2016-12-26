@@ -14,8 +14,22 @@ class SubdomainController extends Controller
 {
     public function postSubdomain(Request $request){
 
+        $name = $request->input('name');
+
+        if(is_null($name) || strlen($name) < 1 || ctype_alnum($name)){
+            abort(400, "Did not provide a valid name for the subdomain.");
+        }
+
+        $name = strtolower($name);
+
+        $subdomain = Subdomain::where('name', $name)->first();
+
+        if(!is_null($subdomain)){
+            abort(400, "Subdomain already exists.");
+        }
+
         $subdomain = Subdomain::create([
-            'name' => $request->input('name'),
+            'name' => $name,
             'yes_protected' => false,
             'no_protected' => false
         ]);
