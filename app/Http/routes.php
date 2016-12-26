@@ -16,8 +16,12 @@ Route::get('/jake', function () {
     return "Hello, World!";
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::group(['domain' => '{subdomain}.localhost'], function () {
+
+Route::group(['domain' => '{subdomain}.hasitdev.online'], function () {
 
     Route::get('/api/gg', 'API\HelloWorldController@getHelloWorld');
 
