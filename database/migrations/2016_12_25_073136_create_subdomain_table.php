@@ -15,6 +15,7 @@ class CreateSubdomainTable extends Migration
         Schema::create('subdomains', function (Blueprint $table){
             $table->increments('id');
             $table->timestamps();
+            $table->integer('created_by');
             $table->string('name',60);
             $table->boolean('yes_protected')->default(false);
             $table->boolean('no_protected')->default(false);

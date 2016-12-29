@@ -25,6 +25,15 @@ Route::get('/sub', function () {
     return view('subdomain');
 });
 
+//Authentication
+Route::auth();
+
+//Profile
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/profile', 'UserController@showProfile');
+  Route::post('/updateEmail', 'UserController@updateEmail');
+});
+
 
 Route::group(['domain' => '{subdomain}.hasitdev.online'], function () {
 

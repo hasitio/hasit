@@ -16,8 +16,14 @@
   <body>
     <div class="row">
       <div class="col-xs-6"><h1><a href="{{ '/' }}">hasit</a></h1></div>
-      <div class="col-xs-6">
-        <a href="#"><h1>login</h1></a>
+      <div class="col-xs-6 rnav">
+        @if (Auth::guest())
+        <a href="{{ url('/login') }}"><h1>login</h1></a>
+        <a href="{{ url('/register') }}"><h1>register</h1></a>
+        @else
+        <a href="{{ url('/profile') }}"><h1>{{ Auth::user()->email }}</h1></a>
+        <a href="{{ url('/logout') }}"><h1>logout</h1></a>
+        @endif
       </div>
     </div>
     <div class="container">

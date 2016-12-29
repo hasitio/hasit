@@ -34,12 +34,20 @@ a:link, a:visited, a:hover, a:active {
     100% { opacity:1; }
 }
 
+.rnav a {
+  display: inline-block;
+}
+
+.rnav a:first-child {
+  margin-right: 25px;
+}
+
 .hasit {
   margin-top: 20%;
   font-size: 28px;
 }
 
-.answer {
+.answer, .auth {
   margin-top: 20%;
 }
 
